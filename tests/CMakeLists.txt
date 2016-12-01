@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(TESTS_FOR_PROJECT Laboratory-Work--2)
+set(TESTS_FOR_PROJECT Laboratory-work-2)
 
 project(${TESTS_FOR_PROJECT}_tests)
 
