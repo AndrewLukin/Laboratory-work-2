@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project (Laboratory-Work--2)
+project (Laboratory-work-2)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
