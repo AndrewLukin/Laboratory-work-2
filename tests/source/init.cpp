@@ -28,7 +28,8 @@ SCENARIO("calculator mult", "[mult]") {
 SCENARIO("calculator div", "[div]") {
     float a = 9.0;
     float b = 1.0;
-    int* c  = 0;
+    int* c = (int*)malloc(sizeof(int));
+    *c  = 0;
     
     double rv = div( a, b, c );
     
@@ -37,7 +38,8 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 1.0;
-    int* c  = 0;
+    int* c = (int*)malloc(sizeof(int));
+    *c  = 0;
     
     double rv = div( a, b, c );
     
@@ -46,7 +48,8 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 0.0;
     float b = 1.0;
-    int* c  = 0;
+    int* c = (int*)malloc(sizeof(int));
+    *c  = 0;
     
     double rv = div( a, b, c );
     
@@ -55,7 +58,8 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 0.0;
-    int* c  = 1;
+    int* c = (int*)malloc(sizeof(int));
+    *c  = 1;
     
     double rv = div( a, b, c );
     
@@ -63,8 +67,10 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator pow", "[pow]") {
     float a = 2.0;
     float b = 1.0;
-    int* extent = -2;
-    int* c  = 0;
+    int* extent = (int*)malloc(sizeof(int));
+    int* c = (int*)malloc(sizeof(int));
+    *extent = -2;
+    *c  = 0;
     
     double rv = pow( a, extent, c );
     
@@ -73,7 +79,8 @@ SCENARIO("calculator pow", "[pow]") {
 SCENARIO("calculator sq", "[sq]") {
     float a = 9.0;
     float b = 1.0;
-    int* c = 0;
+    int* c = (int*)malloc(sizeof(int));
+    *c = 0;
     
     double rv = sq( a, c );
     
