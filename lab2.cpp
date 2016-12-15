@@ -14,8 +14,8 @@ double sum ( float a,  float b);
 double sub ( float a,  float b);
 double mult ( float a,  float b);
 double div ( float a,  float b, int* c );
-double pow ( float a );
-double abs (float a);
+double abs (int* a);
+double pow ( float a, int* extent, int* c);
 double sq ( float a, int* c );
 
 int main (void)
@@ -23,7 +23,9 @@ int main (void)
 	float a = 0.0;
 	float b = 0.0;
 	int* c = (int*)malloc(sizeof(int));
+	int* extent = (int*)malloc(sizeof(int));
 	*c = 0;
+	*extent = 0;
 	cout << endl << "Calculator 0.2";
 	cout << endl << endl << "Print a = "; 
 	cin >> a;
@@ -35,7 +37,11 @@ int main (void)
 	div(a,b,c);
 	if ( *c == 0 ) cout << "a / b = " << div(a,b,c) << endl;
 		else cout << "a / b = Error: it can not be divided by zero" << endl;
-	cout << "a^4 = " << pow(a) << endl;
+	cout << "a^e, print e = ";
+	cin >> *extent;
+	pow(a, extent, c);
+	if ( *c == 0 ) cout << "a^e = " << pow(a, extent, c) << endl;
+		else cout << "a^e = Error (1/0): it can not be divided by zero" << endl;
 	sq(a,c);
 	if ( *c == 0 ) cout << "sqrt(a) = " << sq(a,c) << endl;
 		else cout << "sqrt(a) = Error: root of a negative number does not exist!" << endl;
@@ -55,21 +61,40 @@ double sub ( float a,  float b)
 }
 double mult ( float a,  float b)
 {
-	return a * b;
+	if ( a != 0 && b != 0 ) return a * b;
+		else if ( a == 0 || b == 0 ) return 0;
 }
 double div ( float a,  float b, int* c)
 {
-	if ( b != 0 ) return (float)a/b;
+	if ( a != 0 && b != 0  ) return (float)a/b;
+		else if ( a == 0 ) return 0;
 		else *c = 1;
 }
-double pow ( float a )
+double abs (int* a)
 {
-	unsigned int extent = 4;
+	if ( *a >= 0 ) *a = *a; 
+		else *a = -*a;
+
+	return *a;
+}
+double pow ( float a, int* extent,  int* c)
+{
 	float a2 = a;
 	
-	if ( extent != 0 ) 
+	if ( a != 0 )
 	{
-			for (int i = 1; i < extent; i++)
+		*c = 0;
+		if ( *extent < 0 )
+	{
+		for (int i = 1; i < abs(*extent); i++)
+		{
+			a = a * a2;
+		}
+		a = (float)1 / a;
+	}
+	else if ( *extent > 0 ) 
+	{
+			for (int i = 1; i < *extent; i++)
 		{
 			a = a * a2;
 		}
@@ -77,13 +102,9 @@ double pow ( float a )
 		else a = 1.0;
 	
 	return (double) a;
-}
-double abs (float a)
-{
-	if ( a >= 0 ) a = a; 
-		else a = -a;
-
-	return a;
+	}
+	else *c = 1;
+	
 }
 double sq ( float a, int* c )
 {
@@ -104,7 +125,6 @@ double sq ( float a, int* c )
 	}
 		else if ( a == 1 ) xn1 = 1;
 			else if ( a == 0 ) xn1 = 0;
-				else cout << "error";
 				return xn1;
 	}
 	
