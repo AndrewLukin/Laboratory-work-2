@@ -28,6 +28,7 @@ SCENARIO("calculator mult", "[mult]") {
 SCENARIO("calculator div", "[div]") {
     float a = 9.0;
     float b = 1.0;
+    int* c  = 0;
     
     double rv = div( a, b, c );
     
@@ -36,6 +37,7 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 1.0;
+    int* c  = 0;
     
     double rv = div( a, b, c );
     
@@ -44,6 +46,7 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 0.0;
     float b = 1.0;
+    int* c  = 0;
     
     double rv = div( a, b, c );
     
@@ -52,21 +55,25 @@ SCENARIO("calculator div", "[div]") {
 SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 0.0;
+    int* c  = 1;
     
     double rv = div( a, b, c );
     
 }
 SCENARIO("calculator pow", "[pow]") {
-    float a = 9.0;
+    float a = 2.0;
     float b = 1.0;
+    int* extent = -2;
+    int* c  = 0;
     
     double rv = pow( a, extent, c );
     
-	REQUIRE( rv == 6561.0 );
+	REQUIRE( rv == 0.25 );
 }
 SCENARIO("calculator sq", "[sq]") {
     float a = 9.0;
     float b = 1.0;
+    int* c = 0;
     
     double rv = sq( a, c );
     
