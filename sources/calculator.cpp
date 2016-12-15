@@ -33,7 +33,7 @@ double pow ( float a, int* extent,  int* c)
 		*c = 0;
 		if ( *extent < 0 )
 	{
-		for (int i = 1; i < abs(*extent); i++)
+		for (int i = 1; i < *extent && i > -*extent; i++)
 		{
 			a = a * a2;
 		}
