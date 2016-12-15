@@ -8,21 +8,40 @@ double sub ( float a,  float b)
 }
 double mult ( float a,  float b)
 {
-	return a * b;
+	if ( a != 0 && b != 0 ) return a * b;
+		else if ( a == 0 || b == 0 ) return 0;
 }
 double div ( float a,  float b, int* c)
 {
-	if ( b != 0 ) return (float)a/b;
+	if ( a != 0 && b != 0  ) return (float)a/b;
+		else if ( a == 0 ) return 0;
 		else *c = 1;
 }
-double pow ( float a )
+double abs (int* a)
 {
-	unsigned int extent = 4;
+	if ( *a >= 0 ) *a = *a; 
+		else *a = -*a;
+
+	return *a;
+}
+double pow ( float a, int* extent,  int* c)
+{
 	float a2 = a;
 	
-	if ( extent != 0 ) 
+	if ( a != 0 )
 	{
-			for (int i = 1; i < extent; i++)
+		*c = 0;
+		if ( *extent < 0 )
+	{
+		for (int i = 1; i < abs(*extent); i++)
+		{
+			a = a * a2;
+		}
+		a = (float)1 / a;
+	}
+	else if ( *extent > 0 ) 
+	{
+			for (int i = 1; i < *extent; i++)
 		{
 			a = a * a2;
 		}
@@ -30,13 +49,9 @@ double pow ( float a )
 		else a = 1.0;
 	
 	return (double) a;
-}
-double abs (float a)
-{
-	if ( a >= 0 ) a = a; 
-		else a = -a;
-
-	return a;
+	}
+	else *c = 1;
+	
 }
 double sq ( float a, int* c )
 {
@@ -57,7 +72,6 @@ double sq ( float a, int* c )
 	}
 		else if ( a == 1 ) xn1 = 1;
 			else if ( a == 0 ) xn1 = 0;
-				else cout << "error";
 				return xn1;
 	}
 	
