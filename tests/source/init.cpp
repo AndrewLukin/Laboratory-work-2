@@ -29,7 +29,7 @@ SCENARIO("calculator div", "[div]") {
     float a = 9.0;
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
-    *c  = 0;
+    c  = 0;
     
     double rv = div( a, b, c );
     
@@ -39,7 +39,7 @@ SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
-    *c  = 0;
+    c  = 0;
     
     double rv = div( a, b, c );
     
@@ -49,7 +49,7 @@ SCENARIO("calculator div", "[div]") {
     float a = 0.0;
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
-    *c  = 0;
+    c  = 0;
     
     double rv = div( a, b, c );
     
@@ -59,7 +59,7 @@ SCENARIO("calculator div", "[div]") {
     float a = 1.0;
     float b = 0.0;
     int* c = (int*)malloc(sizeof(int));
-    *c  = 1;
+    c  = 1;
     
     double rv = div( a, b, c );
     
@@ -69,8 +69,8 @@ SCENARIO("calculator pow", "[pow]") {
     float b = 1.0;
     int* extent = (int*)malloc(sizeof(int));
     int* c = (int*)malloc(sizeof(int));
-    *extent = -2;
-    *c  = 0;
+    extent = -2;
+    c  = 0;
     
     double rv = pow( a, extent, c );
     
@@ -80,7 +80,7 @@ SCENARIO("calculator sq", "[sq]") {
     float a = 9.0;
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
-    *c = 0;
+    c = 0;
     
     double rv = sq( a, c );
     
