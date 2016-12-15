@@ -33,6 +33,29 @@ SCENARIO("calculator div", "[div]") {
     
 	REQUIRE( rv == 9.0 );
 }
+SCENARIO("calculator div", "[div]") {
+    float a = 1.0;
+    float b = 1.0;
+    
+    double rv = div( a, b );
+    
+	REQUIRE( rv == 1.0 );
+}
+SCENARIO("calculator div", "[div]") {
+    float a = 0.0;
+    float b = 1.0;
+    
+    double rv = div( a, b );
+    
+	REQUIRE( rv == 0.0 );
+}
+SCENARIO("calculator div", "[div]") {
+    float a = 1.0;
+    float b = 0.0;
+    
+    double rv = div( a, b );
+    
+}
 SCENARIO("calculator pow", "[pow]") {
     float a = 9.0;
     float b = 1.0;
