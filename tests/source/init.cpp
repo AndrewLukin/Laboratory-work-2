@@ -41,7 +41,7 @@ SCENARIO("calculator pow", "[pow]") {
     int* c = (int*)malloc(sizeof(int));
     *extent = -1;
     
-    double *rv = pow( a, extent, c );
+    double rv = pow( a, extent, c );
     
 	REQUIRE( rv == 0.5 );
 }
