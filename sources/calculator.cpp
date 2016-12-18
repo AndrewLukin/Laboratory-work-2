@@ -15,14 +15,7 @@ double div ( float a,  float b, int* c)
 {
 	if ( a != 0 && b != 0  ) return (float)a/b;
 		else if ( a == 0 ) return 0;
-		else *c = 1;
-}
-double abs (int* a)
-{
-	if ( *a >= 0 ) *a = *a; 
-		else *a = -*a;
-
-	return *a;
+		else { *c = 1; return nullptr; }
 }
 double pow ( float a, int* extent,  int* c)
 {
@@ -50,7 +43,7 @@ double pow ( float a, int* extent,  int* c)
 	
 	return (double) a;
 	}
-	else *c = 1;
+	else { *c = 1; return nullptr; }
 	
 }
 double sq ( float a, int* c )
@@ -75,6 +68,6 @@ double sq ( float a, int* c )
 				return xn1;
 	}
 	
-	else *c = 1;
+	else { *c = 1; return nullptr; }
 	
 }
