@@ -77,13 +77,15 @@ double *sq ( float a, int* c )
 	}
 		else if ( a == 1 ) xn1 = 1;
 			else if ( a == 0 ) xn1 = 0;
-	
-		return xn1;
+	        double *d=new double; 
+		*d = xn1; 
+		return d;
 	}
 	
 	else 
 	{ 
 		*c = 1; 
+		return nullptr;
  
 	}
 	
