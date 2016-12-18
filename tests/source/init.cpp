@@ -30,7 +30,7 @@ SCENARIO("calculator div", "[div]") {
     float b = 0.0;
     int* c = (int*)malloc(sizeof(int));
     
-    double rv = div( a, b, c );
+    double *rv = div( a, b, c );
     
 	REQUIRE( rv == nullptr );
 }
@@ -50,7 +50,7 @@ SCENARIO("calculator sq", "[sq]") {
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
     
-    double rv = sq( a, c );
+    double *rv = sq( a, c );
     
 	REQUIRE( rv == nullptr );
 }
