@@ -34,32 +34,6 @@ SCENARIO("calculator div", "[div]") {
     
 	REQUIRE( rv == 9.0 );
 }
-SCENARIO("calculator div", "[div]") {
-    float a = 1.0;
-    float b = 1.0;
-    int* c = (int*)malloc(sizeof(int));
-    
-    double rv = div( a, b, c );
-    
-	REQUIRE( rv == 1.0 );
-}
-SCENARIO("calculator div", "[div]") {
-    float a = 0.0;
-    float b = 1.0;
-    int* c = (int*)malloc(sizeof(int));
-    
-    double rv = div( a, b, c );
-    
-	REQUIRE( rv == 0.0 );
-}
-SCENARIO("calculator div", "[div]") {
-    float a = 1.0;
-    float b = 0.0;
-    int* c = (int*)malloc(sizeof(int));
-    
-    double rv = div( a, b, c );
-    
-}
 SCENARIO("calculator pow", "[pow]") {
     float a = 2.0;
     float b = 1.0;
