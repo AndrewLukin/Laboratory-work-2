@@ -39,10 +39,11 @@ SCENARIO("calculator pow", "[pow]") {
     float b = 1.0;
     int* extent = (int*)malloc(sizeof(int));
     int* c = (int*)malloc(sizeof(int));
+    *extent = -1;
     
     double rv = pow( a, extent, c );
     
-	REQUIRE( rv == 0.25 );
+	REQUIRE( rv == 0.5 );
 }
 SCENARIO("calculator sq", "[sq]") {
     float a = 9.0;
