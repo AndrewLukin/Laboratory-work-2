@@ -19,7 +19,7 @@ SCENARIO("calculator pow", "[pow]") {
 	REQUIRE( rv == 4.0 );
 }
 SCENARIO("calculator sq", "[sq]") {
-    float a = -1.0;
+    float a = -2.0;
     float b = 1.0;
     int* c = (int*)malloc(sizeof(int));
     
