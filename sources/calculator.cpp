@@ -26,7 +26,7 @@ double *div ( float a,  float b, int* c)
 			return nullptr; 
 		}
 }
-double *pow ( float a, int* extent,  int* c)
+double pow ( float a, int* extent,  int* c)
 {
 	float a2 = a;
 	
@@ -50,15 +50,11 @@ double *pow ( float a, int* extent,  int* c)
 	}
 		else a = 1.0;
 	
-		double *d=new double; 
-		*d = a; 
-	
-	return d;
+	return a;
 	}
 	else 
 	{ 
 		*c = 1; 
-		return nullptr; 
 	}
 	
 }
@@ -81,15 +77,14 @@ double *sq ( float a, int* c )
 	}
 		else if ( a == 1 ) xn1 = 1;
 			else if ( a == 0 ) xn1 = 0;
-		double *d=new double;
-		*d = xn1; 
-		return d;
+	
+		return xn1;
 	}
 	
 	else 
 	{ 
 		*c = 1; 
-		return nullptr; 
+ 
 	}
 	
 }
