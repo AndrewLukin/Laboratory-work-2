@@ -13,7 +13,12 @@ double mult ( float a,  float b)
 }
 double *div ( float a,  float b, int* c)
 {
-	if ( a != 0 && b != 0  ) return (float)a/b;
+	if ( a != 0 && b != 0  ) 
+	{ 
+		double *d = (double*)mallloc(sizeof(double)); 
+		*d = (float)a/b; 
+		return d;
+	}
 		else if ( a == 0 ) return 0;
 		else 
 		{ 
@@ -45,7 +50,10 @@ double *pow ( float a, int* extent,  int* c)
 	}
 		else a = 1.0;
 	
-	return (double) a;
+		double *d = (double*)mallloc(sizeof(double)); 
+		*d = a; 
+	
+	return d;
 	}
 	else 
 	{ 
@@ -73,7 +81,9 @@ double *sq ( float a, int* c )
 	}
 		else if ( a == 1 ) xn1 = 1;
 			else if ( a == 0 ) xn1 = 0;
-				return xn1;
+		double *d = (double*)mallloc(sizeof(double)); 
+		*d = xn1; 
+		return d;
 	}
 	
 	else 
