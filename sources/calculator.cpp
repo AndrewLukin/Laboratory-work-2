@@ -43,7 +43,11 @@ double pow ( float a, int* extent,  int* c)
 	
 	return (double) a;
 	}
-	else { *c = 1; return nullptr; }
+	else 
+	{ 
+		*c = 1; 
+		return nullptr; 
+	}
 	
 }
 double sq ( float a, int* c )
@@ -68,6 +72,10 @@ double sq ( float a, int* c )
 				return xn1;
 	}
 	
-	else { *c = 1; return nullptr; }
+	else 
+	{ 
+		*c = 1; 
+		return nullptr; 
+	}
 	
 }
