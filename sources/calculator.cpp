@@ -35,27 +35,26 @@ double pow ( float a, int* extent,  int* c)
 		*c = 0;
 		if ( *extent < 0 )
 	{
-		for (int i = 1; i < *extent && i > -*extent; i++)
+		for (int i = 1; i < abs(*extent); i++)
 		{
 			a = a * a2;
 		}
 		a = (float)1 / a;
 	}
-	else if ( *extent > 0 ) 
-	{
+	    else if ( *extent > 0 ) 
+	    {
 			for (int i = 1; i < *extent; i++)
-		{
+		    {
 			a = a * a2;
-		}
-	}
+		    }
+	    }
 		else a = 1.0;
 	
-	return a;
+	return (double) a;
 	}
-	else 
-	{ 
-		*c = 1; 
-	}
+	else if ( a == 0 && *extent < 0 ) *c = 1;
+	else if ( a == 0 && *extent > 0 ) return 0;
+	else if ( a == 0 && *extent == 0 ) return 1;
 	
 }
 double *sq ( float a, int* c )
