@@ -14,7 +14,6 @@ double sum ( float a,  float b);
 double sub ( float a,  float b);
 double mult ( float a,  float b);
 double div ( float a,  float b, int* c );
-double abs (int* a);
 double pow ( float a, int* extent, int* c);
 double sq ( float a, int* c );
 
@@ -70,13 +69,6 @@ double div ( float a,  float b, int* c)
 		else if ( a == 0 ) return 0;
 		else *c = 1;
 }
-double abs (int* a)
-{
-	if ( *a >= 0 ) *a = *a; 
-		else *a = -*a;
-
-	return *a;
-}
 double pow ( float a, int* extent,  int* c)
 {
 	float a2 = a;
@@ -86,7 +78,7 @@ double pow ( float a, int* extent,  int* c)
 		*c = 0;
 		if ( *extent < 0 )
 	{
-		for (int i = 1; i < abs(*extent); i++)
+		for (unsigned int i = 1; i < -*extent; ++i)
 		{
 			a = a * a2;
 		}
@@ -94,7 +86,7 @@ double pow ( float a, int* extent,  int* c)
 	}
 	    else if ( *extent > 0 ) 
 	    {
-			for (int i = 1; i < *extent; i++)
+			for (unsigned int i = 1; i < *extent; ++i)
 		    {
 			a = a * a2;
 		    }
