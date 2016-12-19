@@ -26,7 +26,7 @@ int main (void)
 	int* extent = (int*)malloc(sizeof(int));
 	*c = 0;
 	*extent = 0;
-	cout << endl << "Calculator 0.2";
+	cout << endl << "Calculator 2.0";
 	cout << endl << endl << "Print a = "; 
 	cin >> a;
 	cout << "Print b = ";
@@ -92,18 +92,20 @@ double pow ( float a, int* extent,  int* c)
 		}
 		a = (float)1 / a;
 	}
-	else if ( *extent > 0 ) 
-	{
+	    else if ( *extent > 0 ) 
+	    {
 			for (int i = 1; i < *extent; i++)
-		{
+		    {
 			a = a * a2;
-		}
-	}
+		    }
+	    }
 		else a = 1.0;
 	
 	return (double) a;
 	}
-	else *c = 1;
+	else if ( a == 0 && *extent < 0 ) *c = 1;
+	else if ( a == 0 && *extent > 0 ) return 0;
+	else if ( a == 0 && *extent == 0 ) return 1;
 	
 }
 double sq ( float a, int* c )
